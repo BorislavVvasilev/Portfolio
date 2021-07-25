@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "3e7a114e-1247-45ff-9c56-34e12d7c0fbd",
+		"name": "Registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registration with already taken username and email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code must be 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"red2\",\r\n  \"email\": \"red2@test.com\",\r\n  \"birthDate\": \"12.03.2012\",\r\n  \"password\": \"redred\",\r\n  \"publicInfo\": \"info\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://161.35.202.130:3100/users",
+					"protocol": "http",
+					"host": [
+						"161",
+						"35",
+						"202",
+						"130"
+					],
+					"port": "3100",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "NewParameter",
+							"value": "neshto",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration with generated new username and email",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var newUser = \"studentche\" + pm.variables.replaceIn('{{$randomInt}}');\r",
+							"pm.collectionVariables.set(\"freshUser\", newUser);\r",
+							"\r",
+							"var newUserEmail = \"student@\" + pm.variables.replaceIn('{{$randomInt}}');\r",
+							"pm.collectionVariables.set(\"freshUserEmail\", newUserEmail);\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"{{freshUser}}\",\r\n  \"email\": \"{{freshUserEmail}}\",\r\n  \"birthDate\": \"01.02.2003\",\r\n  \"password\": \"password\",\r\n  \"publicInfo\": \"who cares\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLinitial}}/users",
+					"host": [
+						"{{URLinitial}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "freshUser",
+			"value": ""
+		},
+		{
+			"key": "freshUserEmail",
+			"value": ""
+		}
+	]
+}
