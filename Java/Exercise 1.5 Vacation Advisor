@@ -1,0 +1,36 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Zadacha5 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        boolean valid = false;
+        while (!valid) {
+            try {
+                System.out.println("Please type 1  if you choose to go on a beach vacation or type 2 if you want to go on a mountain vacation: ");
+                int i = sc.nextInt();
+                valid=true;
+
+                switch (i) {
+                    case 1 -> {
+                        System.out.println("Beach");
+                        System.out.println("Enter your budget: ");
+                        int b = sc.nextInt();
+                        System.out.println(b < 50 ? "You may go somewhere in Bulgaria. Bye!" : "You may go outside of Bulgaria. Bye!");
+                    }
+                    case 2 -> {
+                        System.out.println("Mountain");
+                        System.out.println("Enter your budget: ");
+                        int c = sc.nextInt();
+                        System.out.println(c < 30 ? "You may go somewhere in Bulgaria. Bye!" : "You may go outside of Bulgaria. Bye!");
+                    }
+                    default -> System.out.println("There is no information about this type of vacation.");
+                }
+            } catch (InputMismatchException p) {
+                System.out.println("Please enter a whole number!");
+                valid=false;
+                sc.nextLine();
+            }
+        }
+    }
+}
