@@ -1,0 +1,217 @@
+Xpath exercises with ChroPath on Version: 2020.3.1.4200
+
+
+--Homepage before login--
+
+1. Homepage button
+//img[@id='homeIcon']
+
+2. Home button 
+//a[@id='nav-link-home']
+
+3. Login button
+//a[@id='nav-link-login']
+
+--Own profile page--
+
+1. Profile pic
+//img[@class='profile-image-source']
+
+2. Username
+//div[@class='col-12 col-lg-6 profile-user-settings']
+
+3. Number of posts
+//*[contains(text(), 'posts')]
+
+4. Followers
+//*[contains(text(), 'followers')]
+
+5. Following
+//*[contains(text(), 'following')]
+
+6. Public info 
+//p/strong
+
+7.All posts button 
+//label[@class = 'btn-all btn btn-primary'] 
+
+8. Public posts button 
+//label[@class = 'btn-public btn btn-primary'] 
+
+9. Private posts button 
+//label[@class = 'btn-private btn btn-primary'] 
+
+10. First post
+//div/app-post[1]
+
+11. Second post 
+//div/app-post[2]
+
+12. Modify your profile button 
+//i[@class='fas fa-user-edit ng-star-inserted']
+
+-Sign in form-
+
+1. Sign in form title 
+//p[contains(text(),'Sign in')]
+
+2. Username or email field 
+ //input[@id='defaultLoginFormUsername']
+
+3. Password field 
+ //input[@id='defaultLoginFormPassword']
+
+4. Remember me span
+ //span[contains(text(),'Remember me')]
+
+5. Remember me checkbox 
+//input[@type='checkbox']
+
+6. Sign in button 
+//button[@id='sign-in-button']
+
+7. Not a member? span 
+ //span[contains(text(),'Not a member?')]
+
+8. Register link to registration form 
+ //a[contains(text(),'Register')]
+
+--Homepage after login--  
+
+1. Available post
+//div[@class='post-feed-container']
+
+2. Last post 
+(//div[@class='post-feed-container'])[last()]
+
+3. 8th post 
+(//div[@class='post-feed-container'])[8]
+
+4. Log out button 
+//i[@class='fas fa-sign-out-alt fa-lg']
+
+5. Search bar
+//input[@id='search-bar']
+
+6. Username of the user that created post number 3 on the page 
+(//a[@class='post-user'])[3]
+
+7. Username of the user that created the post
+//a[@class='post-user']
+
+8. Profile picture of the user that created the post 
+//div[@class='col-6 post-profile-img']/img
+
+9. Follow a user button from the homepage/pop up
+ //button[contains(text(),'Follow')]
+ //button[@class='btn btn-primary ng-star-inserted']
+
+10. Unfollow a user button from the homepage/pop up 
+ //button[contains(text(),'Unfollow')]
+ //button[@class='btn btn-primary ng-star-inserted']
+
+11. Like a post from the homepage 
+//i[@class='far fa-heart fa-2x']
+
+12. Like a post from the pop up 
+//i[@class='like far fa-heart fa-2x']
+
+13. Already liked post indication button from homepage 
+//i[@class='far fa-heart fa-2x liked']
+
+14. Already liked post indication button from pop up 
+//i[@class='like far fa-heart fa-2x liked']
+
+15. Dislike button from homepage 
+//i[@class='ml-4 far fa-thumbs-down fa-2x']
+
+16. Dislike button from pop up 
+//i[@class='ml-4 far fa-thumbs-down fa-2x']
+
+17. Already disliked button indication from homepage and pop up
+//i[@class='ml-4 far fa-thumbs-down fa-2x liked']
+
+18. Post date 
+//div[@class='post-date']
+
+19. Comment field in a pop up 
+//input[@placeholder='Comment here']
+
+20. Application version in footer 
+//div[contains(text(),'Version: 2020.3.1.4200')]
+
+21. Typescript programming language icon 
+(//img[@alt='upnetix-title'])[1]
+
+22. Angular web framework icon 
+(//img[@alt='upnetix-title'])[2]
+
+23. Nestjs framework icon
+(//img[@alt='upnetix-title'])[3]
+ 
+24. Technologies 
+ //h6[contains(text(),'Technologies:')]
+
+
+--Search bar--
+
+1. Search bar
+//input[@id='search-bar']
+
+2. Users shown after click on the Search bar
+//div[@class='dropdown-user container-fluid ng-star-inserted]
+
+--New post form-- 
+
+1. New post form title
+//form/h3[@class='text-center']
+
+2. Upload file container 
+//div[@class='uploadfilecontainer']
+
+3. Browse files button 
+//button[@id='choose-file']
+
+4.Caption field 
+//input[@name='caption']
+
+5. Private/Public post selector 
+//span[@class='custom-control custom-switch'] 
+
+6. Private/Public toggle button active 
+//span/label[@class='post-status-label custom-control-label active']
+
+7. Private/Public labels 
+//label[contains(text(),'Public')]
+//label[contains(text(),'Private')]
+
+8. Submit button on Create post form 
+//button[@id='create-post']
+
+--Modify your profile form--
+
+1. Title 
+//h4[contains(text(), 'Modify Your Profile')]
+
+2. Username-input field and label
+//input[@formcontrolname='username']
+//label[contains(text(),'Usermame')]
+
+3. Email-input field and label
+//input[@formcontrolname='email']
+//label[contains(text(),'Email')]
+
+4. Password-input field and label
+//input[@formcontrolname='password']
+//label[contains(text(),'Password')]
+
+5. Confirm password-input field and label
+//input[@formcontrolname='confirmPassword']
+//label[contains(text(),'Confirm password')]
+
+6. Public info-input field and label
+//input[@formcontrolname='publicInfo']
+//label[contains(text(),'Public Info')]
+
+7. Save button (modified information)
+//button[contains(text(),'Save')]
