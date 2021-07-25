@@ -1,0 +1,164 @@
+{
+	"id": "8efb6d6b-1cf1-4870-a66d-7e420364c479",
+	"name": "Login",
+	"timestamp": "2021-07-05T19:56:16.323Z",
+	"collection_id": "0f023d94-e44e-46b2-909e-00a9f59d672d",
+	"folder_id": 0,
+	"environment_id": "7e7b66f2-688f-4971-823b-939255f23560",
+	"totalPass": 4,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b4ec23b8-731c-457e-9626-e707398ecc1b",
+			"name": "Successful login",
+			"url": "http://161.35.202.130:3100/users/login",
+			"time": 319,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Set a collection variable": true
+			},
+			"testPassFailCounts": {
+				"Set a collection variable": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				319
+			],
+			"allTests": [
+				{
+					"Set a collection variable": true
+				}
+			]
+		},
+		{
+			"id": "a29e20c4-e0ff-418a-89bc-fa1e5b3c0320",
+			"name": "Get user ID",
+			"url": "http://161.35.202.130:3100/users/400",
+			"time": 72,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				72
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0a5182b0-3888-4221-8eaf-57449b1f37fc",
+			"name": "Get user by username",
+			"url": "http://161.35.202.130:3100/users?q=santa",
+			"time": 87,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				87
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6a387d6f-1196-4b34-9e3c-29c7cd09f356",
+			"name": "Follow already followed user",
+			"url": "http://161.35.202.130:3100/users/800",
+			"time": 72,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				72
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "d597da7b-a07d-49d8-ac2c-316b40f26aff",
+			"name": "Follow another user",
+			"url": "http://161.35.202.130:3100/users/996",
+			"time": 121,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				121
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 671,
+	"collection": {
+		"requests": [
+			{
+				"id": "b4ec23b8-731c-457e-9626-e707398ecc1b",
+				"method": "POST"
+			},
+			{
+				"id": "a29e20c4-e0ff-418a-89bc-fa1e5b3c0320",
+				"method": "GET"
+			},
+			{
+				"id": "0a5182b0-3888-4221-8eaf-57449b1f37fc",
+				"method": "GET"
+			},
+			{
+				"id": "6a387d6f-1196-4b34-9e3c-29c7cd09f356",
+				"method": "PATCH"
+			},
+			{
+				"id": "d597da7b-a07d-49d8-ac2c-316b40f26aff",
+				"method": "PATCH"
+			}
+		]
+	}
+}
