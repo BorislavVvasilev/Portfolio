@@ -1,0 +1,53 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Zadacha3 {
+    public static void main(String[] args) {
+        double price=0;
+        int quantity=0;
+        Scanner price1=new Scanner(System.in);
+        boolean validp=false;
+        while (!validp){
+            try {
+                System.out.println("Please enter the price of your product here: ");
+                price = price1.nextDouble();
+                if (price<1) {
+                    System.out.println("We do not have that much discount ;)");
+                } else  validp = true;
+            }
+            catch (InputMismatchException m){
+                System.out.println("Prices are only in number format, try again.");
+                price1.nextLine();
+            }
+        }
+        Scanner quantity1=new Scanner(System.in);
+        boolean validq=false;
+        while (!validq){
+            try {
+                System.out.println("Please enter how many units of this product do you want to buy: ");
+                quantity=quantity1.nextInt();
+
+                if (quantity<1) {
+                    System.out.println("Are you sure you want something? ");
+                } else  validq = true;
+            }
+            catch (InputMismatchException m){
+                System.out.println("Prices are only in number format, try again.");
+                quantity1.nextLine();
+            }
+        }
+        if (quantity>=100 && quantity<=120) {
+            System.out.println("The price of this order is: " + String.format("%.2f",(price*quantity)*85/100)+ "$");
+        }
+        if (quantity>120) {
+            System.out.println("The price of this order is: " + String.format("%.2f",(price*quantity)*80/100)+ "$");
+        }
+        if (quantity<100) {
+            System.out.println("The price of this order is: " + String.format("%.2f",(price*quantity))+ "$");
+        }
+        if (quantity<0) {
+            System.out.println("Umm sorry we do not buy things.");
+        }
+        System.out.println("Thanks for stopping by");
+    }
+}
