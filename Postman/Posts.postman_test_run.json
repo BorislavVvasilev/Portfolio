@@ -1,0 +1,117 @@
+{
+	"id": "122c2a52-a0bd-425b-b77c-4551bca936da",
+	"name": "Posts",
+	"timestamp": "2021-07-05T19:56:55.682Z",
+	"collection_id": "c518c182-c1cd-4d3e-9731-66d9efe8ecf3",
+	"folder_id": 0,
+	"environment_id": "7e7b66f2-688f-4971-823b-939255f23560",
+	"totalPass": 5,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "08531bac-e5ff-4c55-85c2-74ebce107184",
+			"name": "Successful login Copy",
+			"url": "http://161.35.202.130:3100/users/login",
+			"time": 352,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Set a collection variable": true
+			},
+			"testPassFailCounts": {
+				"Set a collection variable": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				352
+			],
+			"allTests": [
+				{
+					"Set a collection variable": true
+				}
+			]
+		},
+		{
+			"id": "956f395b-9747-45a1-9d8d-32141ea46767",
+			"name": "Find post by post ID",
+			"url": "http://161.35.202.130:3100/posts/2500",
+			"time": 63,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Set a collection variable": true,
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Set a collection variable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				63
+			],
+			"allTests": [
+				{
+					"Set a collection variable": true,
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "25e62c8b-b811-4209-9469-dfbef7d45ca9",
+			"name": "Get public post",
+			"url": "http://161.35.202.130:3100/posts/public?take=2&skip=0",
+			"time": 48,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Set a collection variable": true
+			},
+			"testPassFailCounts": {
+				"Set a collection variable": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				48
+			],
+			"allTests": [
+				{
+					"Set a collection variable": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 463,
+	"collection": {
+		"requests": [
+			{
+				"id": "08531bac-e5ff-4c55-85c2-74ebce107184",
+				"method": "POST"
+			},
+			{
+				"id": "956f395b-9747-45a1-9d8d-32141ea46767",
+				"method": "GET"
+			},
+			{
+				"id": "25e62c8b-b811-4209-9469-dfbef7d45ca9",
+				"method": "GET"
+			}
+		]
+	}
+}
