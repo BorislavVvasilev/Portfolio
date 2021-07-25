@@ -1,0 +1,33 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Zadacha2 {
+    public static void main(String[] args) {
+        int a=0;
+        Scanner e=new Scanner (System.in);
+        boolean valid=false;
+        while (!valid) {
+            try {
+                System.out.println("You can check if you are eligible to work indicating your age here using whole numbers: ");
+                a = e.nextInt();
+                if (a < 0) {
+                    System.out.println("Are you serious...");
+                } else {
+                    valid = true;
+                }
+            } catch (InputMismatchException m) {
+                System.out.println("Did your cat step on the keyboard?");
+                e.nextLine();
+            }
+        }
+        if (a<16){
+            System.out.println("You are not eligible to work. Sorry.");
+        }
+        else {
+            System.out.println("You are eligible to work. Congrats!");
+        }
+        if (a>80) {
+            System.out.println("I don't know if you are but good luck.");
+        }
+    }
+}
