@@ -1,0 +1,105 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Triangles {
+    private static String Input;
+
+    public static void main(String[] args) {
+
+    String str = "°";
+    Scanner angle = new Scanner(System.in);
+    int a = 0;
+    boolean done = false;
+        while (!done) {
+            try {
+                System.out.println("Angle alpha in degrees:");
+                a = angle.nextInt();
+                done = true;
+
+            } catch (InputMismatchException m) {
+                angle.nextLine();
+                System.out.println("Please use whole numbers");
+            }
+        }
+        boolean valid = false;
+        while (!valid) {
+            if (a > 178 || a < 1) {
+                System.out.println("Each angle can have a degree value between 1 and 178");
+                a = angle.nextInt();
+            } else {
+                valid = true;
+            }
+        }
+                String res = a + str;
+                System.out.println(res);
+        int b = 0;
+        boolean done1 = false;
+        while (!done1) {
+            try {
+                System.out.println("Angle beta in degrees:");
+                b = angle.nextInt();
+                done1 = true;
+
+            }
+            catch (InputMismatchException m) {
+                angle.nextLine();
+                System.out.println("Please use whole numbers");
+            }
+        }
+        boolean valid1 = false;
+        while (!valid1) {
+
+            if (b > 178 || b < 1) {
+                System.out.println("Each angle can have a degree value between 1 and 178");
+                b = angle.nextInt();
+            } else {
+                valid1 = true;
+            }
+        }
+//               System.exit(0);}
+        String res1 = b + str;
+        System.out.println(res1);
+
+        int c = 0;
+        boolean done2 = false;
+        while (!done2) {
+            try {
+                System.out.println("Angle gama in degrees:");
+                c = angle.nextInt();
+                done2 = true;
+
+            } catch (InputMismatchException m) {
+                angle.nextLine();
+                System.out.println("Please use whole numbers");
+            }
+        }
+        boolean valid2 = false;
+        while (!valid2) {
+
+            if (c > 178 || c < 1) {
+                System.out.println("Each angle can have a degree value between 1 and 178");
+                c = angle.nextInt();
+            } else {
+                valid2 = true;
+            }
+        }
+        String res2 = c + str;
+        System.out.println(res2);
+
+        if (a + b + c != 180 || a <= 0 || b <= 0 || c <= 0) {
+            System.out.println("The summary of the values of the triangle must equal 180°");
+//                System.exit(0);
+        } else if (a == b && b == c && c == a)
+            System.out.println("This is an equilateral triangle");
+        else if (a < 90 && b < 90 && c < 90) {
+            String triangleType = (a != b && b != c && c != a) ? "This is an acute multi-faceted triangle" : "This is an acute isosceles triangle";
+            System.out.println(triangleType);
+        } else if (a > 90 || b > 90 || c > 90) {
+            String triangleType1 = (a != b && b != c && c != a) ? "This is an obtuse multi-faceted triangle" : "This is an obtuse isosceles triangle";
+            System.out.println(triangleType1);
+        } else if (a == 90 || b == 90 || c == 90) {
+            String triangleType2 = (a != b && b != c && c != a) ? "This is a right-angled multi-faceted triangle" : "This is a right-angled isosceles triangle";
+            System.out.println(triangleType2);
+        }
+    }
+}
