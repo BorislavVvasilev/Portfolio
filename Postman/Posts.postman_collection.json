@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "c518c182-c1cd-4d3e-9731-66d9efe8ecf3",
+		"name": "Posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Successful login Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Set a collection variable\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.collectionVariables.set(\"token\", jsonData.token);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"usernameOrEmail\":\"wildberries\", \r\n\"password\":\"wildberries\"}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://161.35.202.130:3100/users/login",
+					"protocol": "http",
+					"host": [
+						"161",
+						"35",
+						"202",
+						"130"
+					],
+					"port": "3100",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find post by post ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"usernameOrEmail\":\"wildberries\", \r\n\"password\":\"wildberries\"}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://161.35.202.130:3100/posts/2500",
+					"protocol": "http",
+					"host": [
+						"161",
+						"35",
+						"202",
+						"130"
+					],
+					"port": "3100",
+					"path": [
+						"posts",
+						"2500"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get public post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLinitial}}/posts/public?take=2&skip=0",
+					"host": [
+						"{{URLinitial}}"
+					],
+					"path": [
+						"posts",
+						"public"
+					],
+					"query": [
+						{
+							"key": "take",
+							"value": "2"
+						},
+						{
+							"key": "skip",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Set a collection variable\", function () {",
+					"    var jsonData = pm.response.json();",
+					"    pm.collectionVariables.set(\"token\", jsonData.token);",
+					"});",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
