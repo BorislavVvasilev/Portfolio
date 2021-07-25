@@ -1,0 +1,80 @@
+{
+	"id": "7cfa9135-ee9e-4f79-8c82-77f9d83efc4f",
+	"name": "Registration",
+	"timestamp": "2021-07-05T19:57:09.443Z",
+	"collection_id": "3e7a114e-1247-45ff-9c56-34e12d7c0fbd",
+	"folder_id": 0,
+	"environment_id": "7e7b66f2-688f-4971-823b-939255f23560",
+	"totalPass": 2,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "80b752fb-4b8a-48e2-9a5f-609e31ae4219",
+			"name": "Registration with already taken username and email",
+			"url": "http://161.35.202.130:3100/users",
+			"time": 75,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code must be 400": true
+			},
+			"testPassFailCounts": {
+				"Status code must be 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				75
+			],
+			"allTests": [
+				{
+					"Status code must be 400": true
+				}
+			]
+		},
+		{
+			"id": "06ac09fc-b259-4ca5-84d1-87e51d24da9e",
+			"name": "Registration with generated new username and email",
+			"url": "http://161.35.202.130:3100/users",
+			"time": 303,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				303
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 378,
+	"collection": {
+		"requests": [
+			{
+				"id": "80b752fb-4b8a-48e2-9a5f-609e31ae4219",
+				"method": "POST"
+			},
+			{
+				"id": "06ac09fc-b259-4ca5-84d1-87e51d24da9e",
+				"method": "POST"
+			}
+		]
+	}
+}
