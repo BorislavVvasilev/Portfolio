@@ -79,13 +79,6 @@ namespace HolidayAutomationTests
             await LoginUsers.ChangeProfileByType(LoginUsersPage.AdminLabel);
             await AppWaitingApprovalPage.ApproveRequest(newStartDate, appId, true, userName);
         }
-        //[Test, Description("Промяна на текущия баланс на потребител от администратор")]
-        //public async Task ChangePersonBalanceForTheYear()
-        //{
-        //    await LoginUsers.ChangeProfileByType(LoginUsersPage.UserLabel);
-        //    var balance = BalanceManagementPage.BalanceAfterHoliday(Validations.Period);
-        //    await LoginUsers.ChangeProfileByType(LoginUsersPage.AdminLabel);
-        //    await BalanceManagementPage.ChangeBalancePersonCurrentYear(balance);
-        //}
+        
     }
 }
