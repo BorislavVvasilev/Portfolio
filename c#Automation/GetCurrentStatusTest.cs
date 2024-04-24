@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using Xunit.Abstractions;
 
-namespace UCL.PreSalesModule.AutomationTest.InternalApi
+namespace AutomationTest.InternalApi
 {
     public class GetCurrentStatus : BaseTest
     {
