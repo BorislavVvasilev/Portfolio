@@ -9,11 +9,9 @@ namespace UCL.PreSalesModule.AutomationTest.InternalApi
     {
 
         [Fact]
-        public async void ResponseAttributesTest() //Проверка на  Респонс Атрибути
+        public async void ResponseAttributesTest() 
        
-        //1.Създава нова инстанция на ApiLogic класа, който  съдържа логиката за взаимодействие с API.
-        //2.Извиква асинхронния метод Get_Offers на offersApi обекта, подавайки "0006759-0" като аргумент. Този метод връща отговор, който се записва в променливата response.
-        //3.Проверява дали offerID, date, user и statusName атрибутите на отговора съвпадат със съответните константи. Ако някой от тези атрибути не съвпада с очакваната стойност, тестът ще се провали 
+       
         {
             ApiLogic offersApi = new ApiLogic();
             var response = await offersApi.Get_Offers("0006759-0");
@@ -28,8 +26,7 @@ namespace UCL.PreSalesModule.AutomationTest.InternalApi
         public async Task Get_Offers_Success()
         //Successful request with valid response:
 
-            //Извиква асинхронния метод Get_Offers на api обекта, подавайки "0006759-0" като аргумент. Този метод връща отговор, който се записва в променливата response.
-            //Проверява дали отговорът не е null и дали е от тип OfferResponse.Ако отговорът е null или не е от тип OfferResponse, тестът ще се провали.
+          
         {
             // Arrange
             var api = new ApiLogic();
@@ -46,7 +43,7 @@ namespace UCL.PreSalesModule.AutomationTest.InternalApi
         public async Task ResponseTimeTest() 
         //Response time validation
 
-            //Проверява времето за изпълнение на Requst-a. Ако времето за изпълнение е по-голямо от 1 секунда, тестът ще се провали.
+           
         {
             // Arrange
             var api = new ApiLogic();
@@ -68,11 +65,9 @@ namespace UCL.PreSalesModule.AutomationTest.InternalApi
     public class TestQuery
     {
         [Fact]
-        public async Task TestRequiredQueryMethod() //Проверка на Required Query Method
+        public async Task TestRequiredQueryMethod() //ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  Required Query Method
             
-            //Преобразува заявката в JSON формат и я записва в променливата jsonQuery.
-           //Използва jsonQuery за да извика асинхронния метод Get_Offers на api обекта.Този метод връща отговор, който се записва в променливата response.
-          //Проверява дали отговорът не е null и дали свойството property на отговора е равно на "0006759-0". Ако отговорът е null или property не е равно на "0006759-0", тестът ще се провали.
+         
         {
             // Arrange
             var api = new ApiLogic();
@@ -106,11 +101,9 @@ namespace UCL.PreSalesModule.AutomationTest.InternalApi
                 Assert.True(true, "Response is null"); // Assert that the response is not null
             }
         }
-        public class HeadersTests //Проверка на хедърите на Респонса
+        public class HeadersTests //ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГµГҐГ¤ГєГ°ГЁГІГҐ Г­Г  ГђГҐГ±ГЇГ®Г­Г±Г 
 
-        //ContentTypeTest: проверява дали стойността на хедъра ContentType е равна на "application/json; charset=utf-8". Ако това не е вярно, тестът ще се провали.
-        //ServerTest: проверява дали стойността на хедъра Server е равна на "Microsoft-IIS/10.0". Ако това не е вярно, тестът ще се провали.
-        //XPoweredByTest:  проверява дали стойността на хедъра XPoweredBy е равна на "ASP.NET". Ако това не е вярно, тестът ще се провали.
+    
         {
             [Fact]
             public void ContentTypeTest()
@@ -135,10 +128,9 @@ namespace UCL.PreSalesModule.AutomationTest.InternalApi
             private const string V = "ApiUr";
 
             [Fact]
-            public async Task ContentTypeTest() //Проверка на ContentType на Респонса
+            public async Task ContentTypeTest() //ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  ContentType Г­Г  ГђГҐГ±ГЇГ®Г­Г±Г 
             
-             //Извлича се MediaType от ContentType на Респонса.
-            //Използва се Assert.Equal за да се увери, че MediaType е "application/json". Ако това не е вярно, тестът ще се провали.
+           
             {
                 var response = await GetAsync("https://uclpresalesapi.azurewebsites.net/api/Offers/GetCurrentStatus");
                 var contentType = response.Content.Headers.ContentType.MediaType;
@@ -160,9 +152,9 @@ namespace UCL.PreSalesModule.AutomationTest.InternalApi
             private readonly HttpClient _client = new HttpClient();
 
             [Fact]
-            public async Task ResponseDataLengthGreaterThanZeroTest() // Проверка дали дължината на Респонса е по-голяма от нула
+            public async Task ResponseDataLengthGreaterThanZeroTest() // ГЏГ°Г®ГўГҐГ°ГЄГ  Г¤Г Г«ГЁ Г¤ГєГ«Г¦ГЁГ­Г ГІГ  Г­Г  ГђГҐГ±ГЇГ®Г­Г±Г  ГҐ ГЇГ®-ГЈГ®Г«ГїГ¬Г  Г®ГІ Г­ГіГ«Г 
 
-                //Използва се Assert.True за да се увери, че броят на цифрите в data е по-голям от нула.Ако това не е вярно, тестът ще се провали и ще се покаже съобщението "Response data should not be empty".
+                 "Response data should not be empty".
             {
                 var response = await _client.GetAsync("https://uclpresalesapi.azurewebsites.net/api/Offers/GetCurrentStatus");
                 var responseData = await response.Content.ReadAsStringAsync();
