@@ -132,7 +132,7 @@ namespace AutomationTest.InternalApi
             
            
             {
-                var response = await GetAsync("https://uclpresalesapi.azurewebsites.net/api/Offers/GetCurrentStatus");
+                var response = await GetAsync("https:api/Offers/");
                 var contentType = response.Content.Headers.ContentType.MediaType;
 
                 Assert.Equal("application/json", contentType);
@@ -156,7 +156,7 @@ namespace AutomationTest.InternalApi
 
                  "Response data should not be empty".
             {
-                var response = await _client.GetAsync("https://uclpresalesapi.azurewebsites.net/api/Offers/GetCurrentStatus");
+                var response = await _client.GetAsync("https:api/Offers/");
                 var responseData = await response.Content.ReadAsStringAsync();
                 var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseData);
 
